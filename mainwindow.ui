@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatei">
+    <property name="title">
+     <string>Datei</string>
+    </property>
+    <addaction name="actionLaden"/>
+    <addaction name="actionSchlie_en"/>
+   </widget>
+   <widget class="QMenu" name="menuBearbeiten">
+    <property name="title">
+     <string>Bearbeiten</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAnsicht">
+    <property name="title">
+     <string>Ansicht</string>
+    </property>
+   </widget>
+   <addaction name="menuDatei"/>
+   <addaction name="menuBearbeiten"/>
+   <addaction name="menuAnsicht"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionLaden">
+   <property name="text">
+    <string>Laden</string>
+   </property>
+  </action>
+  <action name="actionSchlie_en">
+   <property name="text">
+    <string>Schließen</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
