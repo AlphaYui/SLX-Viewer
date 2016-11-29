@@ -23,6 +23,6 @@ However the early prototype has proven the file parser to work correctly.
 
 <h2>Current objective</h2>
 
-Currently finishing the first usable rendering prototype has highest priority.
+Finishing the first usable rendering prototype has highest priority.
 This has to be done prior to working on the GUI functionality.
 Rendering time should probably be less than 5ms to support older machines and larger models
