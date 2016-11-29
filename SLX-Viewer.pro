@@ -20,7 +20,15 @@ SOURCES += main.cpp\
     pvar.cpp \
     port.cpp \
     unparsed.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    General/util.cpp \
+    Main/block.cpp \
+    Main/port.cpp \
+    Main/pvar.cpp \
+    Main/system.cpp \
+    Main/unparsed.cpp \
+    Main/wire.cpp \
+    UI/mainwindow.cpp
 
 HEADERS  += \
     system.h \
@@ -30,10 +38,20 @@ HEADERS  += \
     pvar.h \
     port.h \
     unparsed.h \
-    mainwindow.h
+    mainwindow.h \
+    General/util.h \
+    Main/block.h \
+    Main/port.h \
+    Main/pvar.h \
+    Main/system.h \
+    Main/unparsed.h \
+    Main/wire.h \
+    UI/mainwindow.h
 
 FORMS    += \
-    mainwindow.ui
+    mainwindow.ui \
+    UI/mainwindow.ui
 
 DISTFILES += \
-    TODOs.txt
+    TODOs.txt \
+    Notes/TODOs.txt
