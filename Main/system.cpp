@@ -48,7 +48,7 @@ void System::read(QXmlStreamReader *in)
             // If it's a location, parse and insert it
             if( var->getName() == "Location" )
             {
-                position = strToRect(var->getValue().asString());
+                position = var->getValue().asRectangle();
             }
         }
         else if( currentTag == "Object" && isStart )

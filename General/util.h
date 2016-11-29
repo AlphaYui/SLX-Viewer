@@ -9,11 +9,12 @@
 #include <QVector2D>
 #include <QXmlStreamReader>
 
+/* A set of utility functions */
+/* Those may be resorted in the future */
+
+/* XML parsing utilities */
 bool skipToTag(QXmlStreamReader* in, QString tag);
 QMap<QString,QString> attrListToMap(QXmlStreamAttributes);
 PVar* readVariable(QXmlStreamReader* in);
-
-QList<int> strToArray(QString str);
-QRect strToRect(QString str);
 
 #endif // UTIL_H

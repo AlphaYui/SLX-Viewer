@@ -2,6 +2,7 @@
 #define UNPARSED_H
 
 #include <QList>
+#include <QRect>
 #include <QPoint>
 #include <QString>
 
@@ -17,6 +18,7 @@ public:
     Port asPort();
     QList<int> asArray();
     QList<QPoint> asPointArray();
+    QRect asRectangle();
     QString asString();
     int asInt();
     double asDouble();

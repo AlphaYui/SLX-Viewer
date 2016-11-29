@@ -92,6 +92,16 @@ QList<QPoint> Unparsed::asPointArray()
     return result;
 }
 
+QRect Unparsed::asRectangle()
+{
+    QList<int> arr = asArray();
+
+    if( arr.length() > 3 )
+        return QRect(arr[0],arr[1],arr[2],arr[3]);
+    else
+        return QRect();
+}
+
 Port Unparsed::asPort()
 {
     // 23#in:1

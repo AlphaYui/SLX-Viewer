@@ -1,4 +1,5 @@
 TODO - Liste
 ------------
 
-- Laufzeit von System::render(...) messen -> Optimierung notwendig?
+- Rework Wire class: Remove recursion and store complete Wire in one instance
+- Recreate System::render() with efficient text rendering

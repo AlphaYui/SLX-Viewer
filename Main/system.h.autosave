@@ -1,0 +1,49 @@
+#ifndef SYSTEM_H
+#define SYSTEM_H
+
+#include <QList>
+#include <QMap>
+#include <QPainter>
+#include <QPixmap>
+#include <QRect>
+#include <QVariant>
+#include <QVector>
+
+#include <QXmlStreamReader>
+
+#include "pvar.h"
+
+class Block;
+class Wire;
+
+/*
+ * This class represents a simulink system 
+ * It can be rendered to a Pixmap using the render() method
+ * The system can be initialized automagically or by hand
+ */
+
+class System
+{
+    QList<Block*> subsystems;   // Blocks containing subsystems
+    QMap<int,Block*> blocks;    // SID <--> Block
+    QList<Wire*> wires;         // All toplevel wires
+
+    QList<PVar*> attr;
+
+    QRect position;
+
+    void read( QXmlStreamReader* );
+    void preloadWires();
+
+public:
+    System();
+    System( QXmlStreamReader* );
+
+    void load( QXmlStreamReader* );
+
+
+
+    QPixmap render();
+};
+
+#endif // SYSTEM_H

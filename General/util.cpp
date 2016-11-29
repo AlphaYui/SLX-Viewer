@@ -2,11 +2,21 @@
 
 #include <QtDebug>
 
+/*
+ * Skips a specific tag 'tag'
+ * Continues reading stream 'in' until the final end tag is found
+ *
+ * in: The XML input stream
+ * tag: The XML-tag to skip
+ * return: Whether the end of the stream has been reached (instead of the end tag)
+ */
 bool skipToTag(QXmlStreamReader* in, QString tag)
 {
-    int i = 0;
+    // Counts tag instances -> increased with every tag 'tag' entered
+    // Has to be zero for the break condition -> toplevel tag left
     int depth = 0;
 
+    // Skips until end of stream or break condition is reached
     while( !in->atEnd() )
     {
         in->readNext();
@@ -25,21 +35,24 @@ bool skipToTag(QXmlStreamReader* in, QString tag)
                 depth++;
             }
         }
-
-        i++;
     }
-
-    qDebug() << "Skipped " << i << " elements";
 
     return in->atEnd();
 }
 
+/*
+ * Converts a QXmlStreamAttribute list 'attr' to a string map
+ *
+ * attr: The attribute list to convert
+ * return: The attributes sorted as strings
+ */
 QMap<QString,QString> attrListToMap(QXmlStreamAttributes attr)
 {
     QMap<QString,QString> result;
 
     QString key, value;
 
+    // Iterates through attributes and writes them to the map
     for( int i=0; i < attr.length(); i++ )
     {
         key = attr[i].qualifiedName().toString();
@@ -51,7 +64,13 @@ QMap<QString,QString> attrListToMap(QXmlStreamAttributes attr)
     return result;
 }
 
-// P Variables only
+/*
+ * Reads a variable in p-tags from input stream 'in'
+ * Format in file: <P Name="VarName">Value</P>
+ *
+ * in: The XML input stream
+ * returns: A general P-Variable that can be interpreted as wished with the as...() methods
+ */
 PVar* readVariable(QXmlStreamReader *in)
 {
     PVar* result = new PVar();
@@ -68,43 +87,6 @@ PVar* readVariable(QXmlStreamReader *in)
     result->setValue(value);
 
     in->readNext();
-
-    return result;
-}
-
-QList<int> strToArray(QString str)
-{
-    QList<int> result;
-
-    int prev = 1;
-    int index = -1;
-    QString cut;
-
-    while( (index = str.indexOf(',',prev)) != -1 )
-    {
-        cut = str.mid(prev, index-prev);
-
-
-        prev = index + 2;
-
-        result.push_back(cut.toInt());
-    }
-
-    cut = str.mid(prev);
-    cut.remove(']');
-
-    result.push_back(cut.toInt());
-    return result;
-}
-
-QRect strToRect(QString str)
-{
-    QRect result;
-
-    QList<int> arr = strToArray(str);
-
-    if( arr.length() > 3 )
-        result = QRect(arr[0],arr[1],arr[2]-arr[0],arr[3]-arr[1]);
 
     return result;
 }

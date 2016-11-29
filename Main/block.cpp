@@ -47,7 +47,7 @@ void Block::read(QXmlStreamReader *in)
             if( var->getName() == "Position" )
             {
                 // If it's a position, parse and insert it
-                position = strToRect(var->getValue().asString());
+                position = var->getValue().asRectangle();
             }
             else if( var->getName() == "Ports" )
             {
