@@ -3,7 +3,7 @@
 #include "block.h"
 #include "wire.h"
 
-#include "util.h"
+#include "General/util.h"
 
 #include <QPainterPath>
 #include <QtDebug>
@@ -112,8 +112,8 @@ QPixmap System::render()
     font.setPixelSize(12);
     //p.setFont(font);
 
-    //p->fillRect(map.rect(),QColor(255,255,255));
-    p.setPen(QColor(255,255,255));
+    p.fillRect(map.rect(),QColor(255,255,255));
+    p.setPen(QColor(0,0,0));
 
     Block *b;
     int blockCount = blocks.size();

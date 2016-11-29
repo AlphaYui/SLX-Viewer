@@ -1,7 +1,7 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-#include "pvar.h"
+#include "Main/pvar.h"
 
 #include <QList>
 #include <QMap>

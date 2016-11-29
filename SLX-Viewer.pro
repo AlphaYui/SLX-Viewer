@@ -8,19 +8,11 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = XML_Prototype_1
+TARGET = SLX-Viewer
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    system.cpp \
-    block.cpp \
-    wire.cpp \
-    util.cpp \
-    pvar.cpp \
-    port.cpp \
-    unparsed.cpp \
-    mainwindow.cpp \
     General/util.cpp \
     Main/block.cpp \
     Main/port.cpp \
@@ -31,14 +23,6 @@ SOURCES += main.cpp\
     UI/mainwindow.cpp
 
 HEADERS  += \
-    system.h \
-    block.h \
-    wire.h \
-    util.h \
-    pvar.h \
-    port.h \
-    unparsed.h \
-    mainwindow.h \
     General/util.h \
     Main/block.h \
     Main/port.h \
@@ -49,9 +33,14 @@ HEADERS  += \
     UI/mainwindow.h
 
 FORMS    += \
-    mainwindow.ui \
     UI/mainwindow.ui
 
 DISTFILES += \
     TODOs.txt \
-    Notes/TODOs.txt
+    Notes/TODOs.txt \
+    Tests/blockdiagram.xml \
+    Tests/configSet0.xml \
+    Tests/configSetInfo.xml \
+    Tests/graphicalInterface.xml \
+    Tests/stateflow.xml \
+    Tests/BallPlate.slx

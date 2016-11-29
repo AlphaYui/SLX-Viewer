@@ -13,8 +13,3 @@ Port::Port(int t,int s,int i)
     SID = s;
     index = i;
 }
-
-Port::Port(QString str)
-{
-
-}

@@ -19,7 +19,6 @@ private:
 public:
     Port();
     Port(int t,int s,int i);
-    Port(QString);
 
     int getType(){ return type; }
     int getSID(){ return SID; }

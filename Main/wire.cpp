@@ -1,7 +1,7 @@
 #include "wire.h"
 
 #include "pvar.h"
-#include "util.h"
+#include "General/util.h"
 
 #include <cmath>
 
@@ -89,8 +89,6 @@ QVector<QLine> Wire::generateLines(QMap<int, Block*> *mapSID, QPoint start)
 
     QPoint prev = start;
     QPoint now;
-
-    double x,y;
 
     // Iterates through waypoints
     for( int i=0; i < points.length(); ++i )
