@@ -16,13 +16,10 @@ Further optimization is to be made but not necessary (86ms loading time for 1500
 Systems, blocks and wires are seemingly all loading and initializing as intended.
 
 <h3>A very early rendering prototype has been completed</h3>
-The current prototypes renders blocks as rectangles and wires as lines into a QPixmap.
-However, Qts QPainter::drawText(...) method is horrendeously inefficient, causing the rendering time per frame to drop from a very comfortable 0.5ms to ~140ms (for the 15000 line model), and is therefore no option for live GUI rendering.
-Switching to Qt's GraphicsView library seems to be the most straight-forward fix.
-However the early prototype has proven the file parser to work correctly.
+The current prototype renders blocks as rectangles and wires as lines into a QPixmap.
+However, Qts QPainter::drawText(...) method is horrendeously inefficient, causing the rendering time per frame to drop from a very comfortable 0.5ms to ~140ms (for the 15000 line model). With further optimisation of the viewport and by implementing an event-based renderer this can hopefully be resolved.
 
 <h2>Current objective</h2>
 
 Finishing the first usable rendering prototype has highest priority.
-This has to be done prior to working on the GUI functionality.
-Rendering time should probably be less than 5ms to support older machines and larger models
+As it'll be built on Qt's event-based system, an early GUI prototype is also required.
